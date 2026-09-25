@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <!--
+    If you are serving your web app in a path other than the root, change the
+    href value below to reflect the base path you are serving from.
+
+    The path provided below has to start and end with a slash "/" in order for
+    it to work correctly.
+
+    For more details:
+    * https://developer.mozilla.org/en-US/docs/Web/HTML/Element/base
+
+    This is a placeholder for base href that will be replaced by the value of
+    the `--base-href` argument provided to `flutter build`.
+  -->
+  <base href="$FLUTTER_BASE_HREF">
+
+  <meta charset="UTF-8">
+  <meta content="IE=Edge" http-equiv="X-UA-Compatible">
+  <meta name="description" content="El nuevo Nest">
+  <meta name="google-signin-client_id" content="498676147966-jcss6cllvoqcl5nsljf35840671r4pbh.apps.googleusercontent.com">
+
+  <!-- iOS meta tags & icons -->
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="apple-mobile-web-app-title" content="Nest">
+  <link rel="apple-touch-icon" href="icons/Icon-192.png">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="favicon.png"/>
+
+  <title>Nest</title>
+  <link rel="manifest" href="manifest.json">
+
+  <style>
+    body {
+      background-color: #0E0F12;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      width: 100vw;
+      overflow: hidden;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      color: #ffffff;
+      user-select: none;
+    }
+
+    /* Ocultar barra azul de carga superior por defecto de Flutter Web */
+    div[style*="2196f3"],
+    div[style*="33, 150, 243"],
+    div[style*="height: 5px"],
+    .flutter-loader,
+    #flutter_app_loading_bar {
+      display: none !important;
+      opacity: 0 !important;
+      visibility: hidden !important;
+      height: 0px !important;
+      width: 0px !important;
+    }
+
+    .loading-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      animation: fadeIn 0.4s ease-out;
+    }
+
+    .logo {
+      width: 96px;
+      height: 96px;
+      margin-bottom: 24px;
+      border-radius: 22px;
+      animation: pulse 2.2s infinite ease-in-out;
+    }
+
+    .app-title {
+      font-size: 28px;
+      font-weight: 700;
+      color: #ffffff;
+      letter-spacing: -0.5px;
+      margin-bottom: 6px;
+    }
+
+    .app-subtitle {
+      font-size: 14px;
+      color: rgba(255, 255, 255, 0.5);
+      margin-bottom: 28px;
+    }
+
+    .progress-container {
+      width: 200px;
+      height: 4px;
+      background-color: rgba(255, 255, 255, 0.1);
+      border-radius: 4px;
+      overflow: hidden;
+      margin-bottom: 18px;
+    }
+
+    .progress-fill {
+      height: 100%;
+      width: 15%;
+      background: linear-gradient(90deg, #6366F1, #8B5CF6);
+      border-radius: 4px;
+      transition: width 0.35s ease-out;
+    }
+
+    .status-text {
+      font-size: 13px;
+      font-weight: 500;
+      color: rgba(255, 255, 255, 0.65);
+      letter-spacing: 0.2px;
+      height: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .dot {
+      display: inline-block;
+      font-weight: 700;
+      animation: wave 1.2s infinite ease-in-out;
+      margin-left: 1px;
+    }
+
+    .dot:nth-child(1) { animation-delay: 0.0s; }
+    .dot:nth-child(2) { animation-delay: 0.2s; }
+    .dot:nth-child(3) { animation-delay: 0.4s; }
+
+    @keyframes wave {
+      0%, 60%, 100% {
+        transform: translateY(0);
+        opacity: 0.3;
+      }
+      30% {
+        transform: translateY(-4px);
+        opacity: 1;
+      }
+    }
+
+    @keyframes pulse {
+      0%, 100% { transform: scale(1); opacity: 1; }
+      50% { transform: scale(1.04); opacity: 0.88; }
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(8px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+  <div id="loading" class="loading-container">
+    <img src="icons/Icon-192.png" alt="Nest" class="logo" />
+    <div class="app-title">Nest</div>
+    <div class="app-subtitle">Tu estudio, en sintonía.</div>
+
+    <div class="progress-container">
+      <div class="progress-fill" id="progress-fill"></div>
+    </div>
+
+    <div id="status-text" class="status-text">
+      Preparando<span class="dot">.</span><span class="dot">.</span><span class="dot">.</span>
+    </div>
+  </div>
+
+  <script>
+    // Avanzar la barra de progreso progresivamente
+    let progress = 18;
+    const progressFill = document.getElementById('progress-fill');
+    const progressInterval = setInterval(() => {
+      if (progress < 90) {
+        progress += Math.floor(Math.random() * 10) + 8;
+        if (progress > 90) progress = 90;
+        if (progressFill) {
+          progressFill.style.width = progress + '%';
+        }
+      } else {
+        clearInterval(progressInterval);
+      }
+    }, 300);
+
+    // Ocultar barra azul inyectada por Flutter Web si se genera dinámicamente
+    const observer = new MutationObserver((mutations) => {
+      for (const mutation of mutations) {
+        for (const node of mutation.addedNodes) {
+          if (node.nodeType === 1 && node.tagName === 'DIV') {
+            const style = node.getAttribute('style') || '';
+            if (style.includes('2196f3') || style.includes('33, 150, 243') || (style.includes('height: 5px') && style.includes('top: 0'))) {
+              node.remove();
+            }
+          }
+        }
+      }
+    });
+    observer.observe(document.documentElement, { childList: true, subtree: true });
+  </script>
+
+  <script src="flutter_bootstrap.js" async></script>
+</body>
+</html>

@@ -1,0 +1,6 @@
+- [x] Actualizar `Group` model (compatibilidad de IDs y arrays)
+- [x] Actualizar `GroupPost` model (unificación de campos legacy)
+- [x] Actualizar `Note`, `Reminder` y `GroupPoll` models (IDs de autor y metadatos)
+- [x] Modificar `FirebaseService` (unificación en subcolección `posts`)
+- [x] Modificar `DataService` (lógica de guardado y lectura unificada)
+- [ ] Verificación y pruebas manuales

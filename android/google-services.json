@@ -1,0 +1,151 @@
+{
+  "project_info": {
+    "project_number": "498676147966",
+    "firebase_url": "https://nest-d9a47-default-rtdb.firebaseio.com",
+    "project_id": "nest-d9a47",
+    "storage_bucket": "nest-d9a47.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:498676147966:android:d906ea93697f48328d27af",
+        "android_client_info": {
+          "package_name": "com.example.agenda"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "498676147966-iu1f5q4l64p8aeev45k9uknosfbktgfb.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.agenda",
+            "certificate_hash": "e5650308ea3dd6aa93f699a0284be9688fc44ef2"
+          }
+        },
+        {
+          "client_id": "498676147966-jcss6cllvoqcl5nsljf35840671r4pbh.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC7FVrw4F7nRgn9EZiXBG5hpnque4Hln7A"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "498676147966-jcss6cllvoqcl5nsljf35840671r4pbh.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "498676147966-5591mtgpi6m1mb82382b50eu2229tt5n.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.nest.studio.app"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:498676147966:android:988edcd75e7dc10b8d27af",
+        "android_client_info": {
+          "package_name": "com.nest.studio.app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "498676147966-6u8836p7812bqg510lukookpi96cmc5j.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.nest.studio.app",
+            "certificate_hash": "e5650308ea3dd6aa93f699a0284be9688fc44ef2"
+          }
+        },
+        {
+          "client_id": "498676147966-jcss6cllvoqcl5nsljf35840671r4pbh.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC7FVrw4F7nRgn9EZiXBG5hpnque4Hln7A"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "498676147966-jcss6cllvoqcl5nsljf35840671r4pbh.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "498676147966-5591mtgpi6m1mb82382b50eu2229tt5n.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.nest.studio.app"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:498676147966:android:3ca030d46414390e8d27af",
+        "android_client_info": {
+          "package_name": "com.pixelfox.agenda"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "498676147966-irs6j4j4l9j67e0je4l90vee223q4g30.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.pixelfox.agenda",
+            "certificate_hash": "608631f7963699596f0887405de0cff68a2f7eac"
+          }
+        },
+        {
+          "client_id": "498676147966-segepibvil59p95c7sgpe4vgd792jurv.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.pixelfox.agenda",
+            "certificate_hash": "e5650308ea3dd6aa93f699a0284be9688fc44ef2"
+          }
+        },
+        {
+          "client_id": "498676147966-jcss6cllvoqcl5nsljf35840671r4pbh.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC7FVrw4F7nRgn9EZiXBG5hpnque4Hln7A"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "498676147966-jcss6cllvoqcl5nsljf35840671r4pbh.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "498676147966-5591mtgpi6m1mb82382b50eu2229tt5n.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.nest.studio.app"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
